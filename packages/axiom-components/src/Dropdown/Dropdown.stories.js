@@ -17,34 +17,11 @@ import Paragraph from '../Typography/Paragraph';
 import Button from '../Button/Button';
 
 export default {
-  title: 'Dropdown',
+  title: 'Components/Dropdown',
   component: Dropdown,
-
+  subcomponents: { DropdownTarget, DropdownSource, DropdownContext, DropdownContent, DropdownMenu, DropdownMenuItem },
+  includeStories: [],
 };
-
-export function FormDropdown() {
-  return (
-    <Dropdown>
-      <DropdownTarget>
-        <TextInput isTarget placeholder="Pick an Option">
-          <TextInputIcon name="chevron-down"/>
-        </TextInput>
-      </DropdownTarget>
-      <DropdownSource>
-        <DropdownContext>
-          <DropdownMenu>
-            <DropdownMenuItem>electric-dreams</DropdownMenuItem>
-            <DropdownMenuItem>sun-maker</DropdownMenuItem>
-            <DropdownMenuItem>tiny-clanger</DropdownMenuItem>
-            <DropdownMenuItem>fantastic-voyage</DropdownMenuItem>
-            <DropdownMenuItem>giant-leap</DropdownMenuItem>
-            <DropdownMenuItem>primeval-soup</DropdownMenuItem>
-          </DropdownMenu>
-        </DropdownContext>
-      </DropdownSource>
-    </Dropdown>
-  );
-}
 
 export function MenuDropdown() {
   return (
@@ -119,6 +96,11 @@ export function DropdownWithState() {
     </Dropdown>
   );
 }
+
+DropdownWithState.story = {
+  name: 'test',
+  parameters: { foo: 'bar' },
+};
 
 export function DropdownLink() {
   return (
@@ -274,6 +256,14 @@ export function DropdownWithContent() {
   );
 }
 
+DropdownWithContent.story = {
+  parameters: {
+    docs: {
+      storyDescription: 'This will render as Markdown',
+    },
+  },
+};
+
 export function ClosingTheDropdown() {
   const dropdownRef = React.useRef();
 
@@ -282,16 +272,19 @@ export function ClosingTheDropdown() {
   };
 
   return (
-    <Dropdown ref={ dropdownRef }>
-      <DropdownTarget>
-        <Button size="small" style="secondary">Open</Button>
-      </DropdownTarget>
-      <DropdownSource>
-        <DropdownContext width="100%">
-          <Button onClick={ closeDropdown } size="small" style="secondary">Close</Button>
-        </DropdownContext>
-      </DropdownSource>
-    </Dropdown>
+    <React.Fragment>
+      <Button onClick={ () => dropdownRef.current.open() }>Open without Target</Button>
+      <Dropdown ref={ dropdownRef }>
+        <DropdownTarget>
+          <Button size="small" style="secondary">Open</Button>
+        </DropdownTarget>
+        <DropdownSource>
+          <DropdownContext width="100%">
+            <Button onClick={ closeDropdown } size="small" style="secondary">Close</Button>
+          </DropdownContext>
+        </DropdownSource>
+      </Dropdown>
+    </React.Fragment>
   );
 }
 

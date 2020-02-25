@@ -1,0 +1,118 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Dropdown from './Dropdown';
+import DropdownTarget from './DropdownTarget';
+import DropdownSource from './DropdownSource';
+import DropdownContext from './DropdownContext';
+import DropdownMenu from './DropdownMenu'
+import DropdownMenuItem from './DropdownMenuItem'
+import TextInput from '../Form/TextInput'
+import TextInputIcon from '../Form/TextInputIcon'
+import IconButton from '../Icon/IconButton'
+import Link from '../Typography/Link'
+import TextIcon from '../Typography/TextIcon'
+
+<Meta title="components/dropdown" component={Dropdown} />
+
+# Dropdown
+
+The Dropdown component and supporting components can be combined to produce many variations.
+This is prehaps the most common variation.
+
+<Preview>
+    <Story name="Dropdown">
+        <Dropdown>
+            <DropdownTarget>
+                <TextInput isTarget>
+                    <TextInputIcon name="chevron-down" />
+                </TextInput>
+            </DropdownTarget>
+            <DropdownSource>
+                <DropdownContext>
+                    <DropdownMenu>
+                        <DropdownMenuItem>electric-dreams</DropdownMenuItem>
+                        <DropdownMenuItem>sun-maker</DropdownMenuItem>
+                        <DropdownMenuItem>tiny-clanger</DropdownMenuItem>
+                        <DropdownMenuItem>fantastic-voyage</DropdownMenuItem>
+                        <DropdownMenuItem>giant-leap</DropdownMenuItem>
+                        <DropdownMenuItem>primeval-soup</DropdownMenuItem>
+                    </DropdownMenu>
+                </DropdownContext>
+            </DropdownSource>
+        </Dropdown>
+    </Story>
+</Preview>
+
+# Dropdown Target
+
+Here are some example of different Targets.
+
+<Preview>
+    <Story name="Dropdown IconButton">
+        <Dropdown showArrow>
+            <DropdownTarget>
+                <IconButton name="ellipsis" size="small"/>
+            </DropdownTarget>
+            <DropdownSource>
+                <DropdownContext>
+                    <DropdownMenu>
+                        <DropdownMenuItem>electric-dreams</DropdownMenuItem>
+                        <DropdownMenuItem>sun-maker</DropdownMenuItem>
+                        <DropdownMenuItem>tiny-clanger</DropdownMenuItem>
+                        <DropdownMenuItem>fantastic-voyage</DropdownMenuItem>
+                        <DropdownMenuItem>giant-leap</DropdownMenuItem>
+                        <DropdownMenuItem>primeval-soup</DropdownMenuItem>
+                    </DropdownMenu>
+                </DropdownContext>
+            </DropdownSource>
+        </Dropdown>
+    </Story>
+</Preview>
+
+<Preview>
+    <Story name="Dropdown Link Text Icon">
+        <Dropdown>
+            <DropdownTarget>
+                <Link>
+                    Click Me
+                    <TextIcon name="chevron-down" spaceLeft="x1" />
+                </Link>               
+            </DropdownTarget>
+            <DropdownSource>
+                <DropdownContext>
+                    <DropdownMenu>
+                        <DropdownMenuItem>electric-dreams</DropdownMenuItem>
+                        <DropdownMenuItem>sun-maker</DropdownMenuItem>
+                        <DropdownMenuItem>tiny-clanger</DropdownMenuItem>
+                        <DropdownMenuItem>fantastic-voyage</DropdownMenuItem>
+                        <DropdownMenuItem>giant-leap</DropdownMenuItem>
+                        <DropdownMenuItem>primeval-soup</DropdownMenuItem>
+                    </DropdownMenu>
+                </DropdownContext>
+            </DropdownSource>
+        </Dropdown>
+    </Story>
+</Preview>
+
+<Preview>
+    <Story name="Dropdown Text Input Targe">
+        <Dropdown>
+            <DropdownTarget>
+                <TextInput isTarget>
+                    <TextInputIcon name="chevron-down" />
+                </TextInput>
+            </DropdownTarget>
+            <DropdownSource>
+                <DropdownContext>
+                    <DropdownMenu>
+                        <DropdownMenuItem>electric-dreams</DropdownMenuItem>
+                        <DropdownMenuItem>sun-maker</DropdownMenuItem>
+                        <DropdownMenuItem>tiny-clanger</DropdownMenuItem>
+                        <DropdownMenuItem>fantastic-voyage</DropdownMenuItem>
+                        <DropdownMenuItem>giant-leap</DropdownMenuItem>
+                        <DropdownMenuItem>primeval-soup</DropdownMenuItem>
+                    </DropdownMenu>
+                </DropdownContext>
+            </DropdownSource>
+        </Dropdown>
+    </Story>
+</Preview>
