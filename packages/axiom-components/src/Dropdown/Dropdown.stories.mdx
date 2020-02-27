@@ -6,11 +6,10 @@ import DropdownContext from "./DropdownContext";
 <Meta title="Components/Dropdown" component={Dropdown}/>
 
 <Title>Dropdown</Title>
-<Subtitle>Source</Subtitle>
 
 The Dropdown component and it's supporting components can be combined to produce many variations.
 
-<Story name="DropdownWithState">{stories.DropdownWithState()}</Story>
+<Story name="Default">{stories.DropdownWithState()}</Story>
 
 <Props />
 
@@ -25,7 +24,7 @@ The Dropdown component and it's supporting components can be combined to produce
 ### Pick from Menu
 
 <Preview>
-  <Story name="Pick from Menu">{stories.MenuDropdown()}</Story>
+  <Story name="Menu">{stories.MenuDropdown()}</Story>
 </Preview>
 
 ### Link
@@ -91,9 +90,18 @@ This is used to control where `<DropdownSource>` is rendered.
 Provides padding and styling to your content.
 
 #### DropdownMenu
-You will often want to include `<DropdownMenu>` as part of the  `<DropdownSource>`. With this component you can form include Menu groups build mutliselect Menus.
+You will often want to include `<DropdownMenu>` as a child of `<DropdownSource>`.  
+You can use `<DropdownMenuItem>` and `<DropdownMenuHeader>`/`<DropdownMenuFooter>` to build different types of menus.
 
-### DropdownHeader & Footer
+##### Dropdown groups
+
+Dropdown groups can be used to seperate content in a DropdownMenu
+
+<Preview>
+  <Story name="Menu groups">{stories.DropdownMenuGroups()}</Story>
+</Preview>
+
+##### Dropdown Header & Footer
 These can be used provide a header and footer in a DropdownMenu
 
 <Preview>
@@ -101,7 +109,7 @@ These can be used provide a header and footer in a DropdownMenu
 </Preview>
 
 ## Positioning
-You can use the *position* and *offset* prop to control where the Source is displayed relative to the Target. PopperJS is used to manage the placement of the Dropdown Source. See [Version 1 of Popper.js](https://popper.js.org/docs/v1/) and [Position](https://github.com/BrandwatchLtd/axiom-react/blob/master/packages/axiom-components/src/Position/Position.js) for more information.
+You can use the position and offset prop to control where the Source is displayed relative to the Target. Popper.js is used to manage the placement of the Dropdown Source. See [Version 1 of Popper.js](https://popper.js.org/docs/v1/) and [Position](https://github.com/BrandwatchLtd/axiom-react/blob/master/packages/axiom-components/src/Position/Position.js) for more information.
 
 ## Useful Techniques
 
@@ -112,7 +120,8 @@ You can use the *position* and *offset* prop to control where the Source is disp
 </Preview>
 
 #### Programmatically opening and closing the Dropdown
-To do this you must pass a ref into `<Dropdown>`. You can then call the instance methods on the underlieing component e.g. `dropdownRef.current.close()` or `dropdownRef.current.open()`
+Normally this behaviour is handled for you. However sometimes you might want to have more control over this behaviour.  
+You can pass a ref into `<Dropdown>`. You can then call the instance methods on the underlying component e.g. `dropdownRef.current.close()` or `dropdownRef.current.open()`
 
 <Preview>
   <Story name="Closing with ref">{stories.ClosingTheDropdown()}</Story>

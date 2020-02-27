@@ -273,7 +273,9 @@ export function ClosingTheDropdown() {
 
   return (
     <React.Fragment>
-      <Button onClick={ () => dropdownRef.current.open() }>Open without Target</Button>
+      <div>
+        <Button onClick={ () => dropdownRef.current.open() }>Open without Target</Button>
+      </div>
       <Dropdown ref={ dropdownRef }>
         <DropdownTarget>
           <Button size="small" style="secondary">Open</Button>
